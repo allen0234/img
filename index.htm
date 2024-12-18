@@ -1,0 +1,132 @@
+﻿<!--#PaHead-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html" charset="utf-8">
+<title>Web Access Control System</title>
+<script src="ap.js" type="text/javascript"></script>
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="w1000 header">
+    <div class="f_l logo"><img src="img/siera.png" alt="logo"></div>
+    <div class="f_r welcome">SIERA SAC 3000 ACCESS CONTROL SYSTEM</div>
+</div>
+<div class="w1000 main">
+<ul class="menu f_l">
+<li><a href='index.shtm.html'>Console</a></li>
+<li>&nbsp;</li>
+<li><a href='Door.shtm.html'>Door</a></li>
+<li><a href='Config.shtm.html'>Parameter</a></li>
+<li><a href='Config232.shtm.html'>485 Config</a></li>
+<li><a href='Reader485.shtm.html'>485 Reader</a></li>
+<li>&nbsp;</li>
+<li><a href='Linkage.shtm.html'>Multi device linkage</a></li>
+<li><a href='EditOutNode.shtm.html'>Output</a></li>
+<li><a href='ShowCardMast.shtm.html'>Card format</a></li>
+<li>&nbsp;</li>
+<li><a href='ShowTZ.shtm.html'>Time zone</a></li>
+<li><a href='ShowCards.shtm.html'>Cards</a></li>
+<li><a href='SearchCard.shtm.html'>Search</a></li>
+<li><a href='Holiday.shtm.html'>Holiday</a></li>
+<li>&nbsp;</li>
+<li><a href='ShowEvents.shtm.html'>Card event</a></li>
+<li><a href='ShowAlarms.shtm.html'>Alarm event</a></li>
+<li>&nbsp;</li>
+<li><a href='Mqtt.shtm.html'>MQTT</a></li>
+<li><a href='ConfigIP.shtm.html'>Network</a></li>
+<li>&nbsp;</li>
+<li><a href='ETime.shtm.html'>System Time</a></li>
+<li><a href='Auth.shtm.html'>User</a></li>
+<li><a href='Reset.shtm.html'>Reset System</a></li>
+<li><a href='Reboot.shtm.html'>Restart</a></li>
+<li><a href='Update.shtm.html'>Upgrade firmware</a></li>
+</ul>
+<div class="f_r mainBox">
+<div id="loading"><div>unlink:Link to controller fail!</div></div>
+<h1>Status</h1>
+<div id="Show"><div id="time" class="bx2t"></div></div><br>
+
+<div id="CTD">
+<ul>
+<li><div><img id="Dimg1" src="img/guan-1.gif"></div></li>
+<li class="Psm"><label>Door1</label></li>
+<li><input type="button" onclick="AJC('cdor.cgi?open=1&door=0');" value="Open"></li>
+<li><input type="button" onclick="AJC('cdor.cgi?open=0&door=0');" value="Close"></li>
+<li><input type="button" onclick="AJC('cdor.cgi?open=6&door=0');" value="Lock"></li>
+<li><input type="button" onclick="AJC('cdor.cgi?open=7&door=0');" value="Unlock"></li>
+</ul><br><br><br>
+<ul>
+<li><div><img id="Dimg2" src="img/guan-1.gif"></div></li>
+<li class="Psm"><label>Door2</label></li>
+<li><input type="button" onclick="AJC('cdor.cgi?open=1&door=1');" value="Open"></li>
+<li><input type="button" onclick="AJC('cdor.cgi?open=0&door=1');" value="Close"></li>
+<li><input type="button" onclick="AJC('cdor.cgi?open=6&door=1');" value="Lock"></li>
+<li><input type="button" onclick="AJC('cdor.cgi?open=7&door=1');" value="Unlock"></li>
+</ul><br><br><br>
+<ul>
+<li><div><img id="Dimg3" src="img/guan-1.gif"></div></li>
+<li class="Psm"><label>Door3</label></li>
+<li><input type="button" onclick="AJC('cdor.cgi?open=1&door=2');" value="Open"></li>
+<li><input type="button" onclick="AJC('cdor.cgi?open=0&door=2');" value="Close"></li>
+<li><input type="button" onclick="AJC('cdor.cgi?open=6&door=2');" value="Lock"></li>
+<li><input type="button" onclick="AJC('cdor.cgi?open=7&door=2');" value="Unlock"></li>
+</ul><br><br><br>
+<ul>
+<li><div><img id="Dimg4" src="img/guan-1.gif"></div></li>
+<li class="Psm"><label>Door4</label></li>
+<li><input type="button" onclick="AJC('cdor.cgi?open=1&door=3');" value="Open"></li>
+<li><input type="button" onclick="AJC('cdor.cgi?open=0&door=3');" value="Close"></li>
+<li><input type="button" onclick="AJC('cdor.cgi?open=6&door=3');" value="Lock"></li>
+<li><input type="button" onclick="AJC('cdor.cgi?open=7&door=3');" value="Unlock"></li>
+</ul><br><br><br>
+<ul>
+<li><div><img id="Dimg5" src="img/guan-1.gif"></div></li>
+<li class="Psm"><label>Alarm out</label></li>
+<li><input type="button" onclick="AJC('cdor.cgi?open=8');" value="Alarm out"></li>
+<li><input type="button" onclick="AJC('cdor.cgi?open=9');" value="Close"></li>
+</ul><br><br><br>
+<ul>
+<li><div><img id="Dimg6" src="img/fire2-1.gif"></div></li>
+<li class="Psm"><label>Fire Alarm</label></li>
+<li><input type="button" onclick="AJC('cdor.cgi?open=10');" value="Fire Alarm"></li>
+<li><input type="button" onclick="AJC('cdor.cgi?open=11');" value="Close"></li>
+</ul><br><br>
+</div>
+
+<h1>INPUT</h1>
+<ul id="shishi2">
+<li><div class="boxSe"><span class="c1" id="inp1"></span>Exit1</div></li>
+<li><div class="boxSe"><span class="c1" id="inp2"></span>Exit2</div></li>
+<li><div class="boxSe"><span class="c1" id="inp3"></span>Exit3</div></li>
+<li><div class="boxSe"><span class="c1" id="inp4"></span>Exit4</div></li>
+
+<li><div class="boxSe"><span class="c1" id="inp5"></span>Sensor1</div></li>
+<li><div class="boxSe"><span class="c1" id="inp6"></span>Sensor2</div></li>
+<li><div class="boxSe"><span class="c1" id="inp7"></span>Sensor3</div></li>
+<li><div class="boxSe"><span class="c1" id="inp8"></span>Sensor4</div></li>
+
+<li><div class="boxSe"><span class="c1" id="inp9"></span>Alarm</div></li>
+<li><div class="boxSe"><span class="c1" id="inp10"></span>Fire</div></li>
+<li><div class="boxSe"><span class="c1" id="inp11"></span>Tamper</div></li>
+<li><div class="boxSe"><span class="c1" id="inp12"></span>Reset</div></li>
+</ul>
+<br><br><br><br><br>
+
+<h1>Live Event</h1>
+<div><table id="EventList" class="boxEvent">
+<tr class='box_tit'><th>Time</th><th>Card</th><th>Name</th><th>Door</th><th>Direction</th><th>Event</th></tr>
+</table></div>
+
+<script type="text/javascript">
+window.onload=function(){setInterval(GetEventc,500);};
+</script>
+<!--#Footer-->
+</div></div>
+<div class="w1000 footer">
+<p>Copyright &copy; SIERA ELECTRONICS Version:6.0</p>
+<!--#Foot2--><p>Nov 21 2024&nbsp15:49:42</p>
+</div></body>
+</html>
